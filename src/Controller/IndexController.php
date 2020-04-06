@@ -13,7 +13,8 @@ class IndexController extends AbstractController
      * @Route("/")
      */
     public function index() {
-        return new Response("bb");
+//        return new Response("bb");
+        throw $this->createNotFoundException('not fouind');
     }
 
 }
