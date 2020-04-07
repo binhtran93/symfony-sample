@@ -20,8 +20,7 @@ class SongType extends AbstractType
             ->add('artwork', TextType::class)
             ->add('streamUrl', TextType::class)
             ->add('save', SubmitType::class, ['label' => 'Create Song'])
-            ->setMethod('POST')
-            ->setAction('/songs');
+            ->setMethod('POST');
     }
 
     public function configureOptions(OptionsResolver $resolver)

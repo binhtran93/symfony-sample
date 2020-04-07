@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Song
 {
     /**
-     * @Assert\Email
+     * @Assert\Email()
      */
     private $title;
     private $artwork;

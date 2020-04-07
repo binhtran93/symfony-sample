@@ -37,6 +37,11 @@ class Song
      */
     private $createdAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Album", inversedBy="songs", cascade={"persist"})
+     */
+    private $album;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Song
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getAlbum(): ?Album
+    {
+        return $this->album;
+    }
+
+    public function setAlbum(?Album $album): self
+    {
+        $this->album = $album;
 
         return $this;
     }
