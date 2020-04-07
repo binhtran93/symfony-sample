@@ -3,13 +3,17 @@
 
 namespace App\Model;
 
+use Symfony\Component\Validator\Constraints as Assert;
 
 class Song
 {
+    /**
+     * @Assert\Email
+     */
     private $title;
     private $artwork;
     private $streamUrl;
-
+    private $createdAt;
     /**
      * @return mixed
      */
@@ -56,6 +60,22 @@ class Song
     public function setStreamUrl($streamUrl): void
     {
         $this->streamUrl = $streamUrl;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param mixed $createdAt
+     */
+    public function setCreatedAt($createdAt): void
+    {
+        $this->createdAt = $createdAt;
     }
 
 
